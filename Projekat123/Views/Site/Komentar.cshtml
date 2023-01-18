@@ -1,0 +1,68 @@
+﻿@model Projekat123.Models.Forma
+@{
+    ViewBag.Title = "Komentar";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="main-banner">
+    <h2>Komentar</h2>
+</div>
+@using (Html.BeginForm("Komentar","Site",FormMethod.Post)) 
+{
+    <div>
+        <label>Vase ime:</label>
+        @Html.TextBoxFor(x => x.Ime)
+
+
+        <label>Vase prezime:</label>
+        @Html.TextBoxFor(x => x.Prezime)
+
+        <hr>
+        <label>Vas Gmail:</label>
+        @Html.TextBoxFor(x => x.Email)
+
+
+       
+
+        <label>Ocenite nas od 1 do 10:</label>
+        @Html.DropDownListFor(x => x.OcenaUsluge, new[]
+{
+        new SelectListItem()
+            {  Text="1",
+               Value="1" },
+        new SelectListItem()
+            {  Text="2",
+               Value="2" },
+        new SelectListItem()
+            {  Text="3",
+               Value="3" },
+        new SelectListItem()
+            {  Text="4",
+               Value="4" },
+        new SelectListItem()
+            {  Text="5",
+               Value="5" },
+        new SelectListItem()
+            {  Text="6",
+               Value="6" },
+        new SelectListItem()
+            {  Text="7",
+               Value="7" },
+        new SelectListItem()
+            {  Text="8",
+               Value="8" },
+        new SelectListItem()
+            {  Text="9",
+               Value="9" },
+        new SelectListItem()
+            {  Text="10",
+               Value="10" }
+   })
+        <label>Poruka:</label>
+        @Html.TextAreaFor(x => x.Poruka)
+
+
+    </div>
+        <input type="submit" class="main-green-button" value="POTVRDI">
+}
+
